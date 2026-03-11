@@ -4,46 +4,7 @@ property tool_calls : Collection
 
 Class constructor
 	
-Function step2($ChatCompletionsResult : cs:C1710.AIKit.OpenAIChatCompletionsResult)
-	
-	If ($ChatCompletionsResult.success)
-		If ($ChatCompletionsResult.terminated)
-			
-			var $Tools : cs:C1710.Tools
-			$Tools:=cs:C1710.Tools.me
-			
-			$messages:=Form:C1466.messages
-			
-			Case of 
-				: ($ChatCompletionsResult.choice.finish_reason="tool_calls")
-					//
-				: ($ChatCompletionsResult.choice.finish_reason="stop")
-					//
-			End case 
-			
-		Else 
-			If ($ChatCompletionsResult.choice.delta.text#Null:C1517)
-				Form:C1466.text+=$ChatCompletionsResult.choice.delta.text
-			End if 
-			If ($ChatCompletionsResult.choice.delta["reasoning_content"]#Null:C1517)
-				Form:C1466.reasoning_content+=$ChatCompletionsResult.choice.delta["reasoning_content"]
-			End if 
-			If ($ChatCompletionsResult.choice.delta.tool_calls#Null:C1517)
-				For each ($tool_call; $ChatCompletionsResult.choice.delta.tool_calls)
-					var $tool : Object
-					$tool:=Form:C1466.tool_calls.query("index == :1"; $tool_call.index).first()
-					If ($tool=Null:C1517)
-						$tool:=OB Copy:C1225($tool_call)
-						Form:C1466.tool_calls.push($tool)
-					Else 
-						$tool.function.arguments+=$tool_call.function.arguments
-					End if 
-				End for each 
-			End if 
-		End if 
-	End if 
-	
-Function step1($ChatCompletionsResult : cs:C1710.AIKit.OpenAIChatCompletionsResult)
+Function response($ChatCompletionsResult : cs:C1710.AIKit.OpenAIChatCompletionsResult)
 	
 	If ($ChatCompletionsResult.success)
 		If ($ChatCompletionsResult.terminated)
@@ -79,7 +40,7 @@ Function step1($ChatCompletionsResult : cs:C1710.AIKit.OpenAIChatCompletionsResu
 					$ChatCompletionsParameters.tool_choice:="auto"
 					$ChatCompletionsParameters.tools:=$Tools.tools
 					$ChatCompletionsParameters.stream:=True:C214
-					$ChatCompletionsParameters.formula:=Form:C1466.step1
+					$ChatCompletionsParameters.formula:=Form:C1466.response
 					
 					Form:C1466.text:=""
 					Form:C1466.reasoning_content:=""
@@ -137,7 +98,7 @@ Function demo()
 	$ChatCompletionsParameters.tool_choice:="auto"
 	$ChatCompletionsParameters.tools:=$Tools.tools
 	$ChatCompletionsParameters.stream:=True:C214
-	$ChatCompletionsParameters.formula:=Form:C1466.step1
+	$ChatCompletionsParameters.formula:=Form:C1466.response
 	
 	Form:C1466.text:=""
 	Form:C1466.reasoning_content:=""
