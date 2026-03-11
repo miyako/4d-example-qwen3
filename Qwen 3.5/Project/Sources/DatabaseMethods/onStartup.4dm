@@ -39,9 +39,8 @@ use Q8_0 quantisation
 
 $homeFolder:=Folder:C1567(fk home folder:K87:24).folder(".GGUF")
 
-$folder:=$homeFolder.folder("Qwen3.5-0.8B")
+$folder:=$homeFolder.folder("Qwen3.5-2B")
 $path:="Qwen3.5-2B-Q4_K_M.gguf"
-$URL:="unsloth/Qwen3.5-2B-GGUF"
 $URL:="unsloth/Qwen3.5-2B-GGUF"
 
 var $logFile : 4D:C1709.File
