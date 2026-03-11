@@ -70,7 +70,8 @@
 					"dataSourceTypeHint": "text",
 					"dataSource": "Form:C1466.reasoning_content",
 					"enterable": false,
-					"sizingY": "grow"
+					"sizingY": "grow",
+					"method": "ObjectMethods/reasoning_content.4dm"
 				},
 				"Text1": {
 					"type": "text",
