@@ -6,6 +6,11 @@ Class constructor
 	
 Function response($ChatCompletionsResult : cs:C1710.AIKit.OpenAIChatCompletionsResult)
 	
+	If ($ChatCompletionsResult.errors#Null:C1517) && ($ChatCompletionsResult.errors.length#0)
+		Form:C1466.reasoning_content:=$ChatCompletionsResult.errors.extract("message").join("\r")
+		return 
+	End if 
+	
 	If ($ChatCompletionsResult.success)
 		If ($ChatCompletionsResult.terminated)
 			
