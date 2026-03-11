@@ -16,3 +16,4 @@ Else
 End if 
 
 OBJECT SET VISIBLE:C603(*; "progress"; Not:C34($LLM.available))
+OBJECT SET VISIBLE:C603(*; "btn.@"; $LLM.available)

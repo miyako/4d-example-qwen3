@@ -27,16 +27,73 @@
 					"type": "progress",
 					"left": 20,
 					"top": 20,
-					"width": 500,
+					"width": 420,
 					"height": 20,
 					"max": 100,
 					"dataSource": "Form:C1466.progress",
 					"visibility": "hidden"
+				},
+				"text": {
+					"type": "input",
+					"left": 314,
+					"top": 70,
+					"width": 274,
+					"height": 449,
+					"dataSourceTypeHint": "text",
+					"dataSource": "Form:C1466.text",
+					"enterable": false,
+					"sizingY": "grow",
+					"sizingX": "grow",
+					"focusable": true
+				},
+				"btn.DEMO": {
+					"type": "button",
+					"text": "DEMO",
+					"top": 17,
+					"left": 492,
+					"width": 96,
+					"height": 27,
+					"events": [
+						"onClick"
+					],
+					"focusable": true,
+					"visibility": "hidden",
+					"method": "ObjectMethods/btn.DEMO.4dm",
+					"sizingX": "move"
+				},
+				"reasoning_content": {
+					"type": "input",
+					"left": 20,
+					"top": 70,
+					"width": 274,
+					"height": 449,
+					"dataSourceTypeHint": "text",
+					"dataSource": "Form:C1466.reasoning_content",
+					"enterable": false,
+					"sizingY": "grow"
+				},
+				"Text1": {
+					"type": "text",
+					"text": "Internal Monologue",
+					"top": 40,
+					"left": 20,
+					"width": 203,
+					"height": 16,
+					"fontWeight": "bold"
+				},
+				"Text2": {
+					"type": "text",
+					"text": "Chat",
+					"top": 40,
+					"left": 314,
+					"width": 163,
+					"height": 16,
+					"fontWeight": "bold"
 				}
 			}
 		}
 	],
-	"geometryStamp": 22,
+	"geometryStamp": 84,
 	"editor": {
 		"activeView": "View 1",
 		"defaultView": "View 1",

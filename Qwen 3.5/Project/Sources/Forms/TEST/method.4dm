@@ -11,4 +11,7 @@ Case of
 			"unsloth/Qwen3.5-0.8B-GGUF"; 8192; 1; 2; \
 			Current form window:C827; Formula:C1597(OnLLM))
 		
+		OBJECT SET VISIBLE:C603(*; "progress"; Not:C34($LLM.available))
+		OBJECT SET VISIBLE:C603(*; "btn.@"; $LLM.available)
+		
 End case 
