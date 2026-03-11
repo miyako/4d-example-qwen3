@@ -90,8 +90,6 @@ Function step1($ChatCompletionsResult : cs:C1710.AIKit.OpenAIChatCompletionsResu
 					$OpenAI.baseURL:="http://127.0.0.1:8080/v1"
 					$OpenAI.chat.completions.create($messages; $ChatCompletionsParameters)
 					
-					Form:C1466.messages:=$messages
-					
 			End case 
 			
 		Else 
@@ -128,7 +126,7 @@ Function demo()
 	
 	var $messages : Collection
 	$messages:=[]
-	$messages.push({role: "system"; content: "The tools return information about about the current OS and database application. Use them to statisfy the user's requests."})
+	$messages.push({role: "system"; content: "The tools return information about about the current OS and database application. Use them to statisfy the user's requests. All tools applies to the current database application. "})
 	$messages.push({role: "user"; content: "Tell me about the current OS and database application."})
 	
 	var $ChatCompletionsParameters : cs:C1710.AIKit.OpenAIChatCompletionsParameters

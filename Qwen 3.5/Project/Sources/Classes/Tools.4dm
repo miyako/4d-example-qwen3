@@ -11,7 +11,7 @@ shared singleton Class constructor
 		type: "function"; \
 		function: {\
 		name: "systemInfo"; \
-		description: "This command applies to the current database application. The System info command returns an object containg information about the operating system and the characteristics of the system hardware and software from the machine it's executed on."; \
+		description: "The System info command returns an object containg information about the operating system and the characteristics of the system hardware and software from the machine it's executed on."; \
 		parameters: {\
 		type: "object"; \
 		properties: {}}}})
@@ -22,7 +22,7 @@ shared singleton Class constructor
 		type: "function"; \
 		function: {\
 		name: "cacheInfo"; \
-		description: "This command applies to the current database application. The Cache info command returns an object that contains detailed information about the current cache contents (used memory, loaded tables and indexes, etc.) ."; \
+		description: "The Cache info command returns an object that contains detailed information about the current cache contents (used memory, loaded tables and indexes, etc.) ."; \
 		parameters: {\
 		type: "object"; \
 		properties: {}}}})
@@ -33,7 +33,7 @@ shared singleton Class constructor
 		type: "function"; \
 		function: {\
 		name: "databaseMeasures"; \
-		description: "This command applies to the current database application. The Database measures command allows you to get detailed information about engine events. Returned information includes data read/write access from/to the disk or the memory cache, as well as t"+"he use of database indexes, queries and sorts."; \
+		description: "The Database measures command allows you to get detailed information about engine events. Returned information includes data read/write access from/to the disk or the memory cache, as well as t"+"he use of database indexes, queries and sorts."; \
 		parameters: {\
 		type: "object"; \
 		properties: {}}}})
