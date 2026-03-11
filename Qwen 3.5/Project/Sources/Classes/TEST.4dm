@@ -126,7 +126,7 @@ Function demo()
 	
 	var $messages : Collection
 	$messages:=[]
-	$messages.push({role: "system"; content: "The tools return information about about the current OS and database application. Use them to statisfy the user's requests. All tools apply to the current database application. "})
+	$messages.push({role: "system"; content: "The tools return information about about the current OS and database application. Use them to statisfy the user's requests."})
 	$messages.push({role: "user"; content: "Tell me about the current OS and database application."})
 	
 	var $ChatCompletionsParameters : cs:C1710.AIKit.OpenAIChatCompletionsParameters
