@@ -35,8 +35,19 @@ $threads : Integer; $window : Integer; $formula : 4D:C1709.Function)
 	var $port : Integer
 	$port:=8080
 	
+	//https://unsloth.ai/docs/models/qwen3.5#thinking-mode
+	
 	var $options : Object
 	$options:={\
+		temp: 1; \
+		top_p: 0.95; \
+		top_k: 20; \
+		min_p: 0; \
+		log_verbosity: 4; \
+		presence_penalty: 1.5; \
+		repeat_penalty: 1; \
+		spec_type: "draft-mtp"; \
+		spec_draft_n_max: 2; \
 		log_file: $logFile; \
 		ctx_size: $batch_size*$batches*$threads; \
 		batch_size: $batch_size*$batches; \
